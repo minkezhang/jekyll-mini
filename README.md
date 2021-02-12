@@ -1,11 +1,25 @@
 # jekyll-mini
 Minimalistic Jekyll theme using [mini.css](https://minicss.org).
 
-jekyll-mini is focused on efficiently presenting large blocks of text, e.g.
-technical documents, blogs, and creative writing websites.
+jekyll-mini is focused on
+
+1. efficiently presenting large blocks of text; and
+1. affording the separation of *content* from *metadata*.
 
 See [jekyll-mini.blogzhang.com](https://jekyll-mini.blogzhang.com) for an
 example website.
+
+## Features
+
+* Separate Markdown files from YAML metadata -- Markdown files may be symlinks
+  to a dependent submodule.
+* Automatic titles from Markdown H1 headings.
+* File-specific assets -- files may be placed in a directory alongside the post
+  to preserve any relative links used in the Markdown file.
+* Automatic relative URL conversion in RSS feeds -- file-specific assets (e.g.
+  `![Some Image](assets/foo.jpg)` will be converted into
+  `<a href="https://foo.com/posts/2020/02/12/some-post/assets/foo.jpg)` in the
+  RSS feed.
 
 ## Setup
 
