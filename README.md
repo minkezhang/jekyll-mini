@@ -17,9 +17,18 @@ example website.
 * File-specific assets -- files may be placed in a directory alongside the post
   to preserve any relative links used in the Markdown file.
 * Automatic relative URL conversion in RSS feeds -- file-specific assets (e.g.
-  `![Some Image](assets/foo.jpg)` will be converted into
-  `<a href="https://foo.com/posts/2020/02/12/some-post/assets/foo.jpg)` in the
-  RSS feed.
+
+  ```markdown
+  ![Some Image](assets/foo.jpg)
+  [some reference](#anchor)
+  ```
+
+  will be converted into
+  ```html
+  <a href="https://foo.com/posts/2020/02/12/some-post/assets/foo.jpg" />
+  <a href="https://foo.com/posts/2020/02/12/some-post/#anchor" />
+  ```
+  in the RSS feed.
 
 ## Setup
 
