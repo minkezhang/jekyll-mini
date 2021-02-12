@@ -1,5 +1,11 @@
 # jekyll-mini
-Custom Jekyll Theme
+Minimalistic Jekyll theme using [mini.css](https://minicss.org).
+
+jekyll-mini is focused on efficiently presenting large blocks of text, e.g.
+technical documents, blogs, and creative writing websites.
+
+See [jekyll-mini.blogzhang.com](https://jekyll-mini.blogzhang.com) for an
+example website.
 
 ## Setup
 
