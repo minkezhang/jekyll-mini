@@ -16,7 +16,7 @@ example website.
 * Automatic titles from Markdown H1 headings.
 * File-specific assets -- files may be placed in a directory alongside the post
   to preserve any relative links used in the Markdown file.
-* Automatic relative URL conversion in RSS feeds -- file-specific assets (e.g.
+* Automatic relative URL conversion in RSS feeds
 
   ```markdown
   ![Some Image](assets/foo.jpg)
