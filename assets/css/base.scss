@@ -13,20 +13,12 @@
 $secondary_border_color: #ddd;
 $background_color: #f8f8f8;
 
-/* Tweaks from default minicss theme. */
+body {
+  margin: 0 auto;
+  padding-bottom: 20vh;
 
-/**
- * Fix render bug where <pre><code> blocks indent the first line.
- * <pre><code> is valid HTML; see https://stackoverflow.com/questions/4611591/
- * for more information.
- */
-pre code {
-  padding: 0;
-}
-
-// Ensure smallest headers are still at least as big as base text.
-h6 {
-  font-size: 1em;
+  width: 960px;
+  max-width: 100%;
 }
 
 div.byline, div#pagination, div#post-footer-content, div#share, div#footer-nav-wrap {
@@ -35,16 +27,6 @@ div.byline, div#pagination, div#post-footer-content, div#share, div#footer-nav-w
 
 div#post-footer-content {
   text-align: center;
-}
-
-/* Additional styling. */
-
-body {
-  margin: 0 auto;
-  padding-bottom: 20vh;
-
-  width: 960px;
-  max-width: 100%;
 }
 
 div#footer-nav-wrap {
@@ -71,25 +53,26 @@ $post_footer_img_container_padding: 6px;
 $post_footer_img_container_offset: ($post_footer_img_container_size + 2 * ($post_footer_img_container_padding + 1)) / 2;
 
 div#post-footer {
-  // Offset entire div.
+  /* Offset entire div. */
   margin-top: $post_footer_img_container_offset + 10px;
   margin-bottom: -($post_footer_img_container_offset);
 
   width: 100%;
 
-  // Horizontal ruler bisecting the avatar.
+  /* Horizontal ruler bisecting the avatar. */
   border-color: $secondary_border_color;
   border-style: solid;
   border-width: 1px 0 0 0;
 
+  /* Prominent author profile container. */
   div#post-footer-img-container {
     margin: 0 auto;
 
-    // Shift avatar over ruler.
+    /* Shift avatar over ruler. */
     position: relative;
     top: -($post_footer_img_container_offset);
 
-    // Total dimension is is (60px + 2 * (4px + 1px)) = 70px.
+    /* Total dimension is is (60px + 2 * (4px + 1px)) = 70px. */
     width: $post_footer_img_container_size;
     height: $post_footer_img_container_size;
     padding: $post_footer_img_container_padding;
@@ -98,16 +81,16 @@ div#post-footer {
     border-color: $secondary_border_color;
     border-style: solid;
 
-    // Make box opaque and render over parent.
+    /* Make box opaque and render over parent. */
     background: $background_color;
 
     div#post-footer-img {
-      // background-image is auto-populated by the renderer.
+      /* background-image is auto-populated by the renderer. */
 
-      // Scale background image to the size of the div.
+      /* Scale background image to the size of the div. */
       background-size: contain;
 
-      // Scale div size to parent dimensions.
+      /* Scale div size to parent dimensions. */
       height: 100%;
       width: 100%;
     }
