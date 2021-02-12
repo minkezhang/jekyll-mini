@@ -1,0 +1,9 @@
+# Fully specified site-wide social links
+#
+# - twitter:
+#     name: string
+#     link: url
+
+- github:
+    name: Cat McPerson
+    link: https://github.com/minkezhang/jekyll-mini
