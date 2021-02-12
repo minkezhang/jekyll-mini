@@ -18,6 +18,7 @@ categories: [blog, design doc]
 tags: [architecture, game design]
 permalink: /license/mit/
 published: true
+hidden: false
 
 # Provided by jekyll-redirect-from.
 redirect_from:
@@ -27,6 +28,7 @@ redirect_to:
 
 # Custom fields.
 author: key  # References site.data.authors.
+image: url
 preview: >-
   Manually written excerpt of the content.
 social:
@@ -41,3 +43,31 @@ excerpt: >-
 excerpt_separator: <!-- excerpt end -->
 ---
 ```
+
+
+# Built-in fields.
+layout: (post | page)
+categories: [blog, design doc]
+tags: [architecture, game design]
+permalink: /license/mit/
+published: true
+hidden: false
+
+# Provided by jekyll-redirect-from.
+redirect_from:
+  - /path/to/old/link.html
+redirect_to:
+  - /path/to/new/link.html
+
+# Custom fields.
+image: url
+social:
+  name: Reddit
+  url: https://reddit.com/...
+
+# Unused fields.
+title: Some Title
+date: 1999-12-31 23:59:59 -0800
+excerpt: >-
+  Automatically generated excerpt of the content.
+excerpt_separator: <!-- excerpt end -->

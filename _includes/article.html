@@ -2,7 +2,7 @@
 
 <article>
 
-  {% if p.image %}
+  {% if include.preview == false and p.image %}
     <div><img src="{{ p.image }}" id="post-image" /></div>
   {% endif %}
 
