@@ -1,0 +1,32 @@
+plugins:
+  - jekyll-paginate
+  - jekyll-redirect-from
+
+  # Allows setting the H1 Markdown header as the page title.
+  - jekyll-titles-from-headings
+
+  # Allows per-post assets.
+  - jekyll-postfiles
+
+exclude:
+  - third_party/
+
+markdown: kramdown
+highlighter: none
+logo: false
+permalink: pretty
+
+paginate: 15
+paginate_path: "/page/:num/"
+
+language: "en"
+timezone: "America/Los_Angeles"
+title: "Jekyll Mini Theme"
+description: "A mini Jekyll theme"
+url: https://jekyll-mini.blogzhang.com
+
+# jekyll-titles-from-headings
+titles_from_headings:
+  enabled: true
+  strip_title: true
+  collections: true

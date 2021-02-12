@@ -1,0 +1,23 @@
+<div class="byline">
+
+  <div>
+    {% if include.author and site.data.authors[include.author] %}
+      {% assign a = site.data.authors[include.author] %}
+      <address>{{ a.name }}</address>
+    {% endif %}
+
+    <time class="post-date" datetime="{{ include.date | date:"%Y-%m-%d" }}">
+      {{ include.date | date_to_string }}
+    </time>
+  </div>
+
+  {% if include.categories and include.tags %}
+    <div>
+      {% assign cs = include.categories | concat: include.tags %}
+      {% if cs.size > 0 %}
+        {{ cs | array_to_sentence_string }}
+      {% endif %}
+    </div>
+  {% endif %}
+
+</div>

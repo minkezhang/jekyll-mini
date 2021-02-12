@@ -1,0 +1,42 @@
+<footer>
+
+  {% if site.data.social %}
+    <div id="footer-nav-wrap">
+
+      <ul id="footer-nav">
+        {% if site.data.social.reddit %}
+          <li>
+            <span class="fab fa-reddit fa-fw"></span>
+            <a href="{{ site.data.social.reddit.link }}">
+              {{ site.data.social.reddit.name }}
+            </a>
+          </li>
+        {% endif %}
+
+        {% if site.data.social.twitter %}
+          <li>
+            <span class="fab fa-twitter fa-fw"></span>
+            <a href="{{ site.data.social.twitter.link }}">
+              {{ site.data.social.twitter.name }}
+            </a>
+          </li>
+        {% endif %}
+
+        {% if site.data.social.github %}
+          <li>
+            <span class="fab fa-github fa-fw"></span>
+            <a href="{{ site.data.social.github.link }}">
+              {{ site.data.social.github.name }}
+            </a>
+          </li>
+        {% endif %}
+      </ul>
+
+    </div>
+  {% endif %}
+
+  <div>
+    {{ site.title }} &copy; {{"now" | date: "%Y"}}
+  </div>
+
+</footer>

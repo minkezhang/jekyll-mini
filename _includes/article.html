@@ -1,0 +1,33 @@
+{% assign p = include.post %}
+
+<article>
+
+  {% if include.preview == true %}
+    <h2><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h2>
+  {% else %}
+    <h1>{{ p.title }}</h1>
+  {% endif %}
+
+  <section>
+    {% include byline.html author=p.author categories=p.categories tags=p.tags date=p.date %}
+  </section>
+
+  <section>
+    {% if include.preview == true and p.preview %}
+      <p>{{ p.preview }}</p>
+    {% else if include.preview == false %}
+      {{ content }}
+    {% endif %}
+  </section>
+
+  {% if include.preview == false %}
+    {% if p.social %}
+      <div id="share">
+        Comment on <a href="{{ p.social.url }}">{{ p.social.name }}</a>.
+      </div>
+    {% endif %}
+
+    {% include credit.html author=p.author %}
+  {% endif %}
+
+</article>

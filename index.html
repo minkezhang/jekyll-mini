@@ -1,0 +1,23 @@
+---
+layout: default
+cover: false
+---
+
+<div>
+  <h1>{{ site.title }}</h1>
+  <h2>
+    {% if site.description %}
+      {{ site.description }}
+    {% endif %}
+  </h2>
+</div>
+
+<main>
+
+  {% for p in paginator.posts %}
+    {% include article.html post=p preview=true %}
+  {% endfor %}
+
+  {% include pagination.html %}
+
+</main>
