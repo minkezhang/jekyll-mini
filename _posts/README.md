@@ -26,6 +26,7 @@ redirect_to:
   - /path/to/new/link.html
 
 # Custom fields.
+author: key  # References site.data.authors.
 preview: >-
   Manually written excerpt of the content.
 social:

@@ -15,7 +15,7 @@ cover: false
 <main>
 
   {% for p in paginator.posts %}
-    {% include article.html post=p preview=true %}
+    {% include article.html post=p preview=true byline=true credit=false author=true %}
   {% endfor %}
 
   {% include pagination.html %}

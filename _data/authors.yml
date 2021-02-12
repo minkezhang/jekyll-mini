@@ -1,0 +1,13 @@
+# Fully specified author struct
+# 
+# id:
+#   name: string
+#   url: url
+#   about: string
+#   avatar: url
+
+cat:
+    name: Cat McPerson
+    url: https://blogzhang.com
+    about: Cat does cat things.
+    avatar: https://freepngimg.com/thumb/painting/84774-square-art-pixel-rectangle-cat-hd-image-free-png.png
