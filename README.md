@@ -65,8 +65,3 @@ https://jekyllrb.com/docs/ruby-101/
 # Copy files instead of symlinks when JEKYLL_ENV == production.
 JEKYLL_ENV=production; bundle exec jekyll clean && bundle exec jekyll serve
 ```
-
-## TODO
-
-- [ ] Import `collection.html` layout and associated `card.html` fragment from
-  personal blog.

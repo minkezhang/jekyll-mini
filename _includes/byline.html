@@ -44,6 +44,7 @@ include.author string: Key of the author defined in site.data.authors
               <a href="/category/{{ l }}">{{ l }}</a>
             {% endif %}
           {% endcapture %}
+          {% assign m = m | strip %}
           {% assign ls = ls | push: m %}
         {% else %}
           {% assign ls = ls | push: l %}
@@ -60,6 +61,7 @@ include.author string: Key of the author defined in site.data.authors
               <a href="/tag/{{ l }}">{{ l }}</a>
             {% endif %}
           {% endcapture %}
+          {% assign m = m | strip %}
           {% assign ls = ls | push: m %}
         {% else %}
           {% assign ls = ls | push: l %}
