@@ -6,9 +6,9 @@ include.paginator object: Jekyll Paginator object
 
 {% endcomment %}
 
-<div id="pagination">
+{% assign p = include.paginator %}
 
-  {% assign p = include.paginator %}
+<div id="pagination">
 
   {% if include.paginator.previous_page %}
     {% if include.paginator.previous_page == 1 %}
