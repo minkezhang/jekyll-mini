@@ -1,0 +1,47 @@
+{% comment %}
+
+Small tile post component.
+
+include.post object: Jekyll Post object
+
+{% endcomment %}
+
+{% assign p = include.post %}
+
+<!--
+  TODO(minkezhang): Update CSS with better Masonry layout once support rolls
+  out.
+  See https://www.smashingmagazine.com/native-css-masonry-layout-css-grid/
+  -->
+<div class="tile">
+
+    {% if p.image %}
+      <a href="{{ p.url | relative_url }}" class="post-image-link">
+        <img src="{{ p.image }}" />
+      </a>
+    {% else %}
+      <article>
+        <h2>{{ p.title }}</h2>
+
+        <section>
+
+          <div class="card-byline">
+            <time class="post-date" datetime="{{ p.date | date:"%Y-%m-%d" }}">
+              {{ p.date | date_to_string }}
+            </time>
+          </div>
+
+          {% if p.preview %}
+            <p>{{ p.preview }}<p>
+          {% endif %}
+
+          <div class="card-link">
+            <a href="{{ p.url | relative_url }}">More</a>
+          </div>
+
+        </section>
+      </article>
+
+    {% endif %}
+
+</div>

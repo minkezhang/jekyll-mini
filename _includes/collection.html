@@ -1,0 +1,17 @@
+{% comment %}
+
+Masonry layout collection of posts.
+
+include.paginator object: Jekyll Paginator object
+
+{% endcomment %}
+
+{% assign paginator = include.paginator %}
+
+<div id="masonry-grid">
+  {% for p in paginator.posts %}
+    {% include card.html post=p %}
+  {% endfor %}
+</div>
+
+{% include pagination.html paginator=paginator %}

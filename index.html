@@ -1,5 +1,7 @@
 ---
 layout: default
+pagination:
+  enabled: true
 ---
 
 <div>
@@ -17,6 +19,6 @@ layout: default
     {% include article.html post=p preview=true byline=true credit=false author=true %}
   {% endfor %}
 
-  {% include pagination.html %}
+  {% include pagination.html paginator=paginator%}
 
 </main>

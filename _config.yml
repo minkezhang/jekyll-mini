@@ -1,5 +1,5 @@
 plugins:
-  - jekyll-paginate
+  - jekyll-paginate-v2
   - jekyll-redirect-from
 
   # Allows setting the H1 Markdown header as the page title.
@@ -16,14 +16,29 @@ highlighter: none
 logo: false
 permalink: pretty
 
-paginate: 15
-paginate_path: "/page/:num/"
-
 language: "en"
 timezone: "America/Los_Angeles"
 title: "Jekyll Mini Theme"
 description: "A mini Jekyll theme"
 url: https://jekyll-mini.blogzhang.com
+
+# jekyll-paginate-v2
+pagination:
+  enabled: true
+  collection: 'posts'
+  per_page: 15
+  permalink: '/page/:num/'
+autopages:
+  enabled: true
+  tags:
+    layouts: ['collection.html']
+    title: 'Tag :tag'
+  collections:
+    layouts: ['collection.html']
+    title: 'Collection :col'
+  categories:
+    layouts: ['collection.html']
+    title: 'Category :cat'
 
 # jekyll-titles-from-headings
 titles_from_headings:

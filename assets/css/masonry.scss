@@ -1,0 +1,40 @@
+---
+---
+
+/**
+ * Render collection of posts in a masonry layout.
+ */
+div#masonry-grid {
+  column-count: 2;
+  column-gap: 0;
+
+  div.tile {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    break-inside: avoid;
+
+    div.card-byline, div.card-link {
+      margin: 12px 8px;
+    }
+
+    a.post-image-link {
+      margin: 12px 8px;
+      height: 100%;
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        display: block;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+
+  /* Responsive layout for smaller screens. */
+  div#masonry-grid {
+    column-count: 1;
+  }
+
+}

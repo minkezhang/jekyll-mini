@@ -2,26 +2,30 @@
 
 Page navigation component.
 
+include.paginator object: Jekyll Paginator object
+
 {% endcomment %}
 
 <div id="pagination">
 
-  {% if paginator.previous_page %}
-    {% if paginator.previous_page == 1 %}
+  {% assign p = include.paginator %}
+
+  {% if include.paginator.previous_page %}
+    {% if include.paginator.previous_page == 1 %}
       <span class="fas fa-chevron-left fa-fw"></span>
       <a href="/"
          title="Previous Page">Newer</a>
     {% else %}
       <span class="fas fa-chevron-left fa-fw">
-      <a href="{{ paginator.previous_page_path | relative_url }}"
+      <a href="{{ include.paginator.previous_page_path | relative_url }}"
          title="Previous Page">Newer</a>
     {% endif %}
   {% endif %}
 
-  <span>{{paginator.page}} of {{paginator.total_pages}}</span>
+  <span>{{ include.paginator.page }} of {{ include.paginator.total_pages }}</span>
 
-  {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path | relative_url }}"
+  {% if include.paginator.next_page %}
+    <a href="{{ include.paginator.next_page_path | relative_url }}"
        title="Next Page">Older</a>
     <span class="fas fa-chevron-right fa-fw"></span>
   {% endif %}
