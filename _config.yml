@@ -16,10 +16,10 @@ highlighter: none
 logo: false
 permalink: pretty
 
-language: "en"
-timezone: "America/Los_Angeles"
-title: "Jekyll Mini Theme"
-description: "A mini Jekyll theme"
+language: 'en'
+timezone: 'America/Los_Angeles'
+title: 'Jekyll Mini Theme'
+description: 'A mini Jekyll theme'
 url: https://jekyll-mini.blogzhang.com
 
 # jekyll-paginate-v2
@@ -35,12 +35,18 @@ autopages:
   tags:
     layouts: ['collection.html']
     title: 'Tag :tag'
+    slugify:
+      mode: default
   collections:
     layouts: ['collection.html']
     title: 'Collection :col'
+    slugify:
+      mode: default
   categories:
     layouts: ['collection.html']
     title: 'Category :cat'
+    slugify:
+      mode: default
 
 # jekyll-titles-from-headings
 titles_from_headings:

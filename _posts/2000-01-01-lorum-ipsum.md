@@ -5,7 +5,7 @@ preview: >-
   elementum in est vitae, porta vehicula ligula. Nulla euismod massa in
   tristique molestie. Integer ac felis eu quam lacinia lobortis.
 
-tags: [lorem-ipsum]
+tags: [lorem ipsum]
 categories: [example]
 
 author: cat

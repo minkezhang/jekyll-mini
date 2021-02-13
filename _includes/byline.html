@@ -2,6 +2,13 @@
 
 Article byline component.
 
+Generated links assume the default permalink format from
+https://github.com/sverrirs/jekyll-paginate-v2/blob/master/README-AUTOPAGES.md,
+which is to say /(category | tag | collection)/:(cat | tag | coll).
+
+If these values are changed in _config.yml, then this file will also need to be
+changed to match the generated permalink format.
+
 include.author string: Key of the author defined in site.data.authors
         date string: Jekyll date string defined in the Post path or front matter
         categories []string: Defined in front matter
@@ -9,9 +16,6 @@ include.author string: Key of the author defined in site.data.authors
         link bool: Include link to collections page.
 
 {% endcomment %}
-
-{% assign slug = site.categories.slugify.mode %}
-
 
 <div class="byline">
 
@@ -30,10 +34,15 @@ include.author string: Key of the author defined in site.data.authors
     <div>
       {% assign ls = "" | split: ", " %}
 
+      {% assign slug = slugify site.autopages.categories.slugify.mode %}
       {% for l in include.categories %}
         {% if include.link == true %}
           {% capture m %}
-            <a href="/category/{{ l | slugify slug }}">{{ l }}</a>
+            {% if slug %}
+              <a href="/category/{{ l | slugify slug }}">{{ l }}</a>
+            {% else %}
+              <a href="/category/{{ l }}">{{ l }}</a>
+            {% endif %}
           {% endcapture %}
           {% assign ls = ls | push: m %}
         {% else %}
@@ -41,10 +50,15 @@ include.author string: Key of the author defined in site.data.authors
         {% endif %}
       {% endfor %}
 
+      {% assign slug = slugify site.autopages.tags.slugify.mode %}
       {% for l in include.tags %}
         {% if include.link == true %}
           {% capture m %}
-            <a href="/tag/{{ l | slugify slug }}">{{ l }}</a>
+            {% if slug %}
+              <a href="/tag/{{ l | slugify slug }}">{{ l }}</a>
+            {% else %}
+              <a href="/tag/{{ l }}">{{ l }}</a>
+            {% endif %}
           {% endcapture %}
           {% assign ls = ls | push: m %}
         {% else %}
