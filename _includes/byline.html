@@ -6,6 +6,7 @@ include.author string: Key of the author defined in site.data.authors
         date string: Jekyll date string defined in the Post path or front matter
         categories []string: Defined in front matter
         tags []string: Defined in front matter
+        link bool: Include link to collections page.
 
 {% endcomment %}
 
@@ -25,9 +26,19 @@ include.author string: Key of the author defined in site.data.authors
 
   {% if include.categories or include.tags %}
     <div>
-      {% assign cs = include.categories | concat: include.tags %}
-      {% if cs.size > 0 %}
-        {{ cs | array_to_sentence_string }}
+      {% if include.link == true %}
+        {% for l in include.categories %}
+          <a href="/category/{{ l }}">{{ l | slugify site.categories.slugify.mode }}</a>
+        {% endfor %}
+
+        {% for l in include.tags %}
+          <a href="/tag/{{ l }}">{{ l | slugify site.tags.slugify.mode }}</a>
+        {% endfor %}
+      {% else %}
+        {% assign cs = include.categories | concat: include.tags %}
+        {% if cs.size > 0 %}
+          {{ cs | array_to_sentence_string }}
+        {% endif %}
       {% endif %}
     </div>
   {% endif %}

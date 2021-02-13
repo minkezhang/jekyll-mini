@@ -16,7 +16,7 @@ pagination:
 <main>
 
   {% for p in paginator.posts %}
-    {% include article.html post=p preview=true byline=true credit=false author=true %}
+    {% include article.html post=p preview=true byline=true credit=false author=true link=false %}
   {% endfor %}
 
   {% include pagination.html paginator=paginator%}
