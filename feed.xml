@@ -4,6 +4,7 @@ layout: null
 <?xml version="1.0" encoding="UTF-8"?>
 
 {% assign l = site.baseurl | prepend: site.url %}
+{% assign n = 10 %}
 
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
@@ -15,26 +16,32 @@ layout: null
     <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
     <generator>Jekyll v{{ jekyll.version }}</generator>
 
-    {% for post in site.posts limit: 10 %}
+    {% assign i = 0 %}
+    {% for p in site.posts %}
 
-      {% assign u = post.url | prepend: l %}
-      <item>
+      {% assign u = p.url | prepend: l %}
 
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | replace_link: u | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ u }}</link>
-        <guid isPermaLink="true">{{ u }}</guid>
+      {% if p.hidden != true and i < n %}
+        {% assign i = i | plus: 1 %}
 
-        {% for tag in post.tags %}
-          <category>{{ tag | xml_escape }}</category>
-        {% endfor %}
+        <item>
 
-        {% for cat in post.categories %}
-          <category>{{ cat | xml_escape }}</category>
-        {% endfor %}
+          <title>{{ p.title | xml_escape }}</title>
+          <description>{{ p.content | replace_link: u | xml_escape }}</description>
+          <pubDate>{{ p.date | date_to_rfc822 }}</pubDate>
+          <link>{{ u }}</link>
+          <guid isPermaLink="true">{{ u }}</guid>
 
-      </item>
+          {% for tag in p.tags %}
+            <category>{{ tag | xml_escape }}</category>
+          {% endfor %}
+
+          {% for cat in p.categories %}
+            <category>{{ cat | xml_escape }}</category>
+          {% endfor %}
+
+        </item>
+      {% endif %}
 
     {% endfor %}
 
