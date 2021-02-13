@@ -28,6 +28,8 @@ pagination:
   collection: 'posts'
   per_page: 15
   permalink: '/page/:num/'
+  sort_reverse: true
+
 autopages:
   enabled: true
   tags:
