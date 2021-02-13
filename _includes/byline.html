@@ -10,6 +10,8 @@ include.author string: Key of the author defined in site.data.authors
 
 {% endcomment %}
 
+{% assign slug = site.categories.slugify.mode %}
+
 
 <div class="byline">
 
@@ -26,19 +28,32 @@ include.author string: Key of the author defined in site.data.authors
 
   {% if include.categories or include.tags %}
     <div>
-      {% if include.link == true %}
-        {% for l in include.categories %}
-          <a href="/category/{{ l }}">{{ l | slugify site.categories.slugify.mode }}</a>
-        {% endfor %}
+      {% assign ls = "" | split: ", " %}
 
-        {% for l in include.tags %}
-          <a href="/tag/{{ l }}">{{ l | slugify site.tags.slugify.mode }}</a>
-        {% endfor %}
-      {% else %}
-        {% assign cs = include.categories | concat: include.tags %}
-        {% if cs.size > 0 %}
-          {{ cs | array_to_sentence_string }}
+      {% for l in include.categories %}
+        {% if include.link == true %}
+          {% capture m %}
+            <a href="/category/{{ l | slugify slug }}">{{ l }}</a>
+          {% endcapture %}
+          {% assign ls = ls | push: m %}
+        {% else %}
+          {% assign ls = ls | push: l %}
         {% endif %}
+      {% endfor %}
+
+      {% for l in include.tags %}
+        {% if include.link == true %}
+          {% capture m %}
+            <a href="/tag/{{ l | slugify slug }}">{{ l }}</a>
+          {% endcapture %}
+          {% assign ls = ls | push: m %}
+        {% else %}
+          {% assign ls = ls | push: l %}
+        {% endif %}
+      {% endfor %}
+
+      {% if ls.size > 0 %}
+        {{ ls | array_to_sentence_string }}
       {% endif %}
     </div>
   {% endif %}
