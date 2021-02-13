@@ -34,12 +34,12 @@ include.author string: Key of the author defined in site.data.authors
     <div>
       {% assign ls = "" | split: ", " %}
 
-      {% assign slug = slugify site.autopages.categories.slugify.mode %}
+      {% assign s = site.autopages.categories.slugify %}
       {% for l in include.categories %}
         {% if include.link == true %}
           {% capture m %}
-            {% if slug %}
-              <a href="/category/{{ l | slugify slug }}">{{ l }}</a>
+            {% if s.mode %}
+              <a href="/category/{{ l | slugify s.mode }}">{{ l }}</a>
             {% else %}
               <a href="/category/{{ l }}">{{ l }}</a>
             {% endif %}
@@ -50,12 +50,12 @@ include.author string: Key of the author defined in site.data.authors
         {% endif %}
       {% endfor %}
 
-      {% assign slug = slugify site.autopages.tags.slugify.mode %}
+      {% assign s = site.autopages.tags.slugify %}
       {% for l in include.tags %}
         {% if include.link == true %}
           {% capture m %}
-            {% if slug %}
-              <a href="/tag/{{ l | slugify slug }}">{{ l }}</a>
+            {% if s.mode %}
+              <a href="/tag/{{ l | slugify s.mode }}">{{ l }}</a>
             {% else %}
               <a href="/tag/{{ l }}">{{ l }}</a>
             {% endif %}
