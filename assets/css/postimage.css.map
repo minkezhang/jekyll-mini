@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "postimage.css",
+	"sources": [
+		"postimage.scss"
+	],
+	"sourcesContent": [
+		"/* Hero image rendering style for post.image tag. */\nimg#post-image {\n  display: block;\n  margin-left: auto;\n  margin-right: auto;\n}\n"
+	],
+	"names": [],
+	"mappings": "AAAA,oDAAoD;AACpD,AAAA,GAAG,AAAA,WAAW,CAAC,EACb,OAAO,EAAE,KAAK,EACd,WAAW,EAAE,IAAI,EACjB,YAAY,EAAE,IAAI,GACnB"
+}

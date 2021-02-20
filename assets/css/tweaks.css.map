@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "tweaks.css",
+	"sources": [
+		"tweaks.scss"
+	],
+	"sourcesContent": [
+		"/* Tweaks from default minicss theme. */\n\n/**\n * Fix render bug where <pre><code> blocks indent the first line.\n * <pre><code> is valid HTML; see https://stackoverflow.com/questions/4611591/\n * for more information.\n */\npre code {\n  padding: 0;\n}\n\n// Ensure smallest headers are still at least as big as base text.\nh6 {\n  font-size: 1em;\n}\n"
+	],
+	"names": [],
+	"mappings": "AAAA,wCAAwC;AAExC,uKAIG;AACH,AAAA,GAAG,CAAC,IAAI,CAAC,EACP,OAAO,EAAE,CAAC,GACX;;AAGD,AAAA,EAAE,CAAC,EACD,SAAS,EAAE,GAAG,GACf"
+}

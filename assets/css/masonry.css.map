@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "masonry.css",
+	"sources": [
+		"masonry.scss"
+	],
+	"sourcesContent": [
+		"/**\n * Render collection of posts in a masonry layout.\n */\ndiv#masonry-grid {\n  column-count: 2;\n  column-gap: 0;\n\n  div.tile {\n    display: grid;\n    grid-template-rows: 1fr auto;\n    break-inside: avoid;\n\n    div.card-byline, div.card-link {\n      margin: 12px 8px;\n    }\n\n    a.post-image-link {\n      margin: 12px 8px;\n      height: 100%;\n      img {\n        width: 100%;\n        height: auto;\n        object-fit: cover;\n        display: block;\n      }\n    }\n  }\n}\n\n@media only screen and (max-width: 640px) {\n\n  /* Responsive layout for smaller screens. */\n  div#masonry-grid {\n    column-count: 1;\n  }\n\n}\n"
+	],
+	"names": [],
+	"mappings": "AAAA,sDAEG;AACH,AAAA,GAAG,AAAA,aAAa,CAAC,EACf,YAAY,EAAE,CAAC,EACf,UAAU,EAAE,CAAC,GAsBd;;AAxBD,AAIE,GAJC,AAAA,aAAa,CAId,GAAG,AAAA,KAAK,CAAC,EACP,OAAO,EAAE,IAAI,EACb,kBAAkB,EAAE,QAAQ,EAC5B,YAAY,EAAE,KAAK,GAgBpB;;AAvBH,AASI,GATD,AAAA,aAAa,CAId,GAAG,AAAA,KAAK,CAKN,GAAG,AAAA,YAAY,EATnB,GAAG,AAAA,aAAa,CAId,GAAG,AAAA,KAAK,CAKW,GAAG,AAAA,UAAU,CAAC,EAC7B,MAAM,EAAE,QAAQ,GACjB;;AAXL,AAaI,GAbD,AAAA,aAAa,CAId,GAAG,AAAA,KAAK,CASN,CAAC,AAAA,gBAAgB,CAAC,EAChB,MAAM,EAAE,QAAQ,EAChB,MAAM,EAAE,IAAI,GAOb;;AAtBL,AAgBM,GAhBH,AAAA,aAAa,CAId,GAAG,AAAA,KAAK,CASN,CAAC,AAAA,gBAAgB,CAGf,GAAG,CAAC,EACF,KAAK,EAAE,IAAI,EACX,MAAM,EAAE,IAAI,EACZ,UAAU,EAAE,KAAK,EACjB,OAAO,EAAE,KAAK,GACf;;AAKP,MAAM,mCAEJ,GAAA,4CAA4C,CAC5C,AAAA,GAAG,AAAA,aAAa,CAAC,EACf,YAAY,EAAE,CAAC,GAChB,EAH2C"
+}
