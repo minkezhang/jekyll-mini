@@ -1,0 +1,20 @@
+/** Vars populated from default values of https://minicss.org/flavors. TODO(minkezhang): Generate color palette with https://color.adobe.com/create/image. TODO(minkezhang): Update using SASS vars instead. */
+body { margin: 0 auto; padding-bottom: 20vh; width: 960px; max-width: 100%; }
+
+div.byline, div#pagination, div#post-footer-content, div#share, div#footer-nav-wrap { margin: 12px 8px; }
+
+div#post-footer-content { text-align: center; }
+
+div#footer-nav-wrap { margin: 0 0 16px 0; }
+
+div#footer-nav-wrap ul#footer-nav { list-style-type: none; padding: 0; margin: 0 0; }
+
+@media only screen and (max-width: 640px) { /* Maximize smaller screen estate */ header.sticky { position: static; } }
+
+div#post-footer { /* Offset entire div. */ margin-top: 57px; margin-bottom: -47px; width: 100%; /* Horizontal ruler bisecting the avatar. */ border-color: #ddd; border-style: solid; border-width: 1px 0 0 0; /* Prominent author profile container. */ }
+
+div#post-footer div#post-footer-img-container { margin: 0 auto; /* Shift avatar over ruler. */ position: relative; top: -47px; /* Total dimension is is (60px + 2 * (4px + 1px)) = 70px. */ width: 80px; height: 80px; padding: 6px; border-width: 1px; border-color: #ddd; border-style: solid; /* Make box opaque and render over parent. */ background: #f8f8f8; }
+
+div#post-footer div#post-footer-img-container div#post-footer-img { /* background-image is auto-populated by the renderer. */ /* Scale background image to the size of the div. */ background-size: contain; /* Scale div size to parent dimensions. */ height: 100%; width: 100%; }
+
+/*# sourceMappingURL=base.css.map */
