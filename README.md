@@ -40,6 +40,12 @@ git submodule update --init --recursive
 git submodule update --remote --recursive
 ```
 
+**N.B.**: In order to use the included deployment [Action](.github/workflows/publish.yml),
+
+1. Copy the file to the new repo
+1. Set the `TOKEN` repo secret with `workflow` permissions
+1. In the repo settings, set `Pages >> Build and deployment >> Source` to `GitHub Actions`
+
 ## Submodules
 
 ```bash
@@ -50,7 +56,6 @@ git submodule add -b ${BRANCH} ${REPO} third_party/${LOCAL_DIR_PATH}
 # See https://stackoverflow.com/a/29850245
 git submodule deinit ${MODULE}
 git rm ${MODULE}
-
 ```
 
 ## Local Build
