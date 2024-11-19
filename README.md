@@ -33,7 +33,7 @@ example website.
 ## Setup
 
 ```bash
-git clone git@github.com:downflux/blog.git
+git@github.com:minkezhang/jekyll-mini.git
 git submodule update --init --recursive
 
 # Update all submodules
