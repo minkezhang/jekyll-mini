@@ -19,7 +19,7 @@ include.post object: Jekyll Post object
       <a href="{{ p.url | relative_url }}" class="post-image-link">
         <img src="{{ p.image_small }}" />
       </a>
-    {% elsif if p.image %}
+    {% elsif p.image %}
       <a href="{{ p.url | relative_url }}" class="post-image-link">
         <img src="{{ p.image }}" />
       </a>
