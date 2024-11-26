@@ -27,7 +27,8 @@ redirect_to:
   - /path/to/new/link.html
 
 # Custom fields.
-author: key  # References site.data.authors.
+author: key       # References site.data.authors.
+image_small: url  # Optionally used for collections.
 image: url
 preview: >-
   Manually written excerpt of the content.

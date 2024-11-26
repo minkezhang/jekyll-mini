@@ -1,6 +1,7 @@
 # TODO(minkezhang): Replace with modified
 # https://github.com/rukbotto/jekyll-absolute-links instead to handle more edge
 # cases, e.g. embedded code exceptions.
+
 module Jekyll
   module RelativeLinkFilter
     # Replace relative links e.g. "path/to/x" to "/absolute/path/to/x" in input
