@@ -50,7 +50,7 @@ div#footer-nav-wrap {
 
 $post_footer_img_container_size: 80px;
 $post_footer_img_container_padding: 6px;
-$post_footer_img_container_offset: ($post_footer_img_container_size + 2 * ($post_footer_img_container_padding + 1)) / 2;
+$post_footer_img_container_offset: calc(($post_footer_img_container_size + 2 * ($post_footer_img_container_padding + 1px)) / 2);
 
 div#post-footer {
   /* Offset entire div. */
