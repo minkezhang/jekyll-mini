@@ -4,6 +4,11 @@
 
 module ReadMetaFiles
   class Generator < Jekyll::Generator
+
+    # This plugin must run before jekyll-redirect-from in order to surface the
+    # correct post properties. If this plugin fails to execute, the redirect
+    # links will not be generated.
+    priority :high
     def generate(site)
 
       site.posts.docs.each do |doc|
